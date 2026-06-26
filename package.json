@@ -4,7 +4,12 @@
   "description": "automate main scenarios of todos application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -17,11 +22,11 @@
   },
   "homepage": "https://github.com/priyankachandima-git/qa-exam-different#readme",
   "dependencies": {
-    "jsonpath": "^1.1.1",
-    "xlsx": "^0.17.4"
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "node-xlsx": "^0.17.2",
-    "cypress": "^9.1.1"
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
   }
 }

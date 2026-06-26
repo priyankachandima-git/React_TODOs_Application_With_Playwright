@@ -1,6 +1,6 @@
 {
   "MainScreen": {
-    "Url": "/examples/react/#/",
+    "Url": "/examples/react/dist/",
     "Identifier" : ".learn-bar",
     "PageHeader": ".todoapp h1",
     "AddNewTodoInput" : ".new-todo",
@@ -9,7 +9,7 @@
     "SelectItems": ".toggle",
     "TodoItemLabel": ".todo-list li label",
     "DeleteItem": ".destroy",
-    "NumberOfItemsLeft": ".todo-count strong",
+    "NumberOfItemsLeft": ".todo-count",
     "CompleteAll": "#toggle-all",
     "ClearAllCompleted": ".clear-completed",
     "FilterByCompletedItem": "a[href='#/completed']"

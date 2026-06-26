@@ -1,20 +1,39 @@
 This repository contains :
-Manual and automated test cases (## Cypress) for React: TODOs sample application. [https://todomvc.com/examples/react/#/ ](https://todomvc.com/examples/react/dist/)
-
-
+Manual and automated test cases (Playwright + TypeScript) for the React: TODOs sample application. [https://todomvc.com/examples/react/dist/](https://todomvc.com/examples/react/dist/)
 
 # Manual test cases
 Open "TestCases.md" file to see the test cases that assure the 100% test coverage of TODOS application.
 
 # Setup and run automation test scripts
-To run automated test cases you need to follow the below steps. 
+To run the automated test cases, follow the steps below.
 
 ```bash
-run "npm install" command to install Node dependencies on your project.
+# 1. Install Node dependencies
+npm install
 
-run "cypress run" command to run all the test cases in headless mode.
+# 2. Install the Playwright browser (first time only)
+npx playwright install chromium
 
-You can open Cypress execution panel by running "npx cypress open" command, then click on "testMainScreen.spec.js" to run all the test cases.
+# 3. Run all tests in headless mode
+npm test
+
+# Other useful commands
+npm run test:headed   # run with a visible browser
+npm run test:ui       # open the Playwright UI runner
+npm run test:debug    # step-through debugging
+npm run report        # open the last HTML report
+npm run typecheck     # TypeScript type-check only
+```
+
+# Project structure
+```
+tests/             Test specs (testMainScreen.spec.ts)
+helpers/           Business-level flows (mainScreenHelper.ts)
+testBase/          The "I" actor — generic action DSL (testBase.ts)
+support/           Playwright fixtures + xlsx data reader
+pageObjects/       Selectors as JSON (todosFrontPages.json)
+fixtures/          Test data (mainScreen.json, mainScreenData.xlsx)
+playwright.config.ts
 ```
 
 # Author
