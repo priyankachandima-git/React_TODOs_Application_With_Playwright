@@ -1,3 +1,5 @@
+[![Playwright Tests](https://github.com/priyankachandima-git/React_TODOs_Application_With_Playwright/actions/workflows/playwright.yml/badge.svg)](https://github.com/priyankachandima-git/React_TODOs_Application_With_Playwright/actions/workflows/playwright.yml)
+
 This repository contains :
 Manual and automated test cases (Playwright + TypeScript) for the React: TODOs sample application. [https://todomvc.com/examples/react/dist/](https://todomvc.com/examples/react/dist/)
 
