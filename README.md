@@ -36,5 +36,17 @@ fixtures/          Test data (mainScreen.json, mainScreenData.xlsx)
 playwright.config.ts
 ```
 
+# Adding new tests (Claude Code skill)
+This repo ships a project-scoped [Claude Code](https://claude.com/claude-code) skill
+at `.claude/skills/testscript/` to help you add new test scripts that follow this
+framework's layered architecture (spec → helpers → "I" actor → page-object JSON).
+
+Open the repo in Claude Code and either run `/testscript` or just ask
+("add a test for …", "automate this scenario", "add a page object for …").
+It reads the existing layers, reuses Actor verbs where possible, builds the new
+test bottom-up, and verifies with `npm run typecheck` + the test run.
+See `.claude/skills/testscript/SKILL.md` (workflow & conventions) and
+`reference.md` (Actor API + templates).
+
 # Author
 * Priyanka Chandima Somapala - priyankachandimas@gmail.com
