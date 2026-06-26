@@ -9,6 +9,7 @@
     "SelectItems": ".toggle",
     "TodoItemLabel": ".todo-list li label",
     "DeleteItem": ".destroy",
+    "EditTodoInput": ".todo-list li .edit",
     "NumberOfItemsLeft": ".todo-count",
     "CompleteAll": "#toggle-all",
     "ClearAllCompleted": ".clear-completed",

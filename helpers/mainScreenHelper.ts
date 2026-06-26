@@ -154,3 +154,40 @@ export async function I_ValidateTodoItemDoesNotExistByTitle(
     );
   }
 }
+
+/**
+ * @param I the actor
+ * @param oldTitle current title of the TODO item to edit
+ * @param newTitle new title to set
+ * @summary Edit a TODO item's title by double-clicking its label, replacing the
+ *          text and confirming with Enter.
+ */
+export async function I_EditTodoItemByTitle(
+  I: Actor,
+  oldTitle: string,
+  newTitle: string,
+): Promise<void> {
+  const indexOfItem = await GetIndexByItemTitle(I, oldTitle);
+  // Double-clicking the label puts the row into edit mode and reveals the
+  // single `.edit` input (pre-filled with the current title).
+  await I.loc(todosFrontPages.MainScreen.TodoItemLabel)
+    .nth(indexOfItem)
+    .dblclick();
+  await I.FillAndPressEnter(todosFrontPages.MainScreen.EditTodoInput, newTitle);
+}
+
+/**
+ * @param I the actor
+ * @param todoItemTitle title expected to be present in the list
+ * @summary Verify a TODO item with the given title exists in the list.
+ */
+export async function I_ValidateTodoItemExistsByTitle(
+  I: Actor,
+  todoItemTitle: string,
+): Promise<void> {
+  await expect(
+    I.loc(todosFrontPages.MainScreen.TodoItemLabel).filter({
+      hasText: todoItemTitle,
+    }),
+  ).toHaveCount(1);
+}
